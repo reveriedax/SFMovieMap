@@ -1,0 +1,88 @@
+<!DOCTYPE html>  
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">  
+<html>
+<head>
+	<title>San Francisco Movie Map</title>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/cerulean-bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+
+</head>
+<body>
+<div id="page" style="width:100%;height:100%;margin: 0px; padding: 0px">
+	<header class="container" style="padding:10px;margin: 10px;">
+      <div id="menu" class="navbar navbar-default navbar-fixed-top " style="padding: 10px">
+        <div class="navbar-header">
+          <button class="btn btn-success navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="glyphicon glyphicon-align-justify"></span>
+          </button>
+          <div id="logo">
+              <a class="navbar-brand" href="."><span class="glyphicon glyphicon-globe"></span> San Francisco Movie Map</a>
+          </div>
+        </div>
+        <div class="navbar-collapse collapse " >
+          <ul class="nav navbar-nav navbar-right" >
+            <li>
+              <select class="form-control" id="mySelect" onchange="movieChange(this)" style="width:200px">
+                <option value="">Filter By Movie</option>
+              </select>
+            </li>
+            <li class="nav">
+              <a href="#" onclick="moveToLocation();"><span class="glyphicon glyphicon-map-marker"></span> Use My Current Location </a>
+            </li>
+            <li class="nav">
+              <a href="#" class="nav" onclick="randomMovie();"><span class="glyphicon glyphicon-send"></span> Random Movie</a>
+            </li>
+
+            <li class="nav">
+              <a href="#" onclick="takeATour();" id="LinkTour"><span class="glyphicon glyphicon-film"></span><span id="TourText"> Take a Tour</span></a>  <!-- Tour Slideshow -->
+            </li>
+
+            <li class="nav"><a href="#about" data-toggle="modal">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+	<section id="body" class="container" style="width:100%;margin:0px;padding:0px">
+		<!-- <div class="map-container"> -->
+		<div class="col-md-12"  style="width:100%;height:100%;margin:0px;padding:0px">
+		    <div id="movie-map" ></div>
+		
+	</section>
+
+	<footer class="container">
+
+	</footer>
+
+
+  <div class="modal" id="about" tabIndex=-1 class="col-md-6">
+      <div class="modal-dialog">
+        <div class="model-content">
+          <div class="modal-header">
+            <a href="#" class="close" data-dismiss="modal">&times;</a>
+            <h4>About</h4>
+          </div>
+          <div class="modal-body">
+            This site compiled using data from SF Open Data and TMDb.  This site uses the TMDb API but is not endorsed or certified by TMDb.
+          </div>
+          <div class="modal-footer">
+            <button class="btn-success" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+  </div>
+
+</div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="scripts/scripts.js"></script>
+</body>
+</html>
